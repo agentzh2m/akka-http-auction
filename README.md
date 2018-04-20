@@ -12,11 +12,11 @@ We expose the following api
 
 ```
 
-* Make a bid. (POST /auction/<auction_id>) with the following json in the body:
+* Make a bid. `(POST /auction/<auction_id>)` with the following json in the body:
 
 ```
 { "bid_price": <your bid price a decimal number>,
-                  "bidder_id": <your identifier, any string> }
+  "bidder_id": <your identifier, any string> }
 
 ```
 
@@ -30,22 +30,22 @@ We expose the following api
  * If you are not the current winning bid, it will return:
 ```
 { "status": "lost",
-                  "current_price": <price of the highest bid> }
+"current_price": <price of the highest bid> }
 ```
 
-* Get the current winner of an auction.(GET /auction/<auction_id>) returns
+* Get the current winner of an auction. `(GET /auction/<auction_id>)` returns
 
 ```
 { "bid_winner_id": <bidder_id of the winner>,
-                  "current_price": <price of the highest bid> }
+  "current_price": <price of the highest bid> }
 ```
 
-* Conclude an auction. (DELETE /auction/<auction_id>) should conclude and remove this
+* Conclude an auction. `(DELETE /auction/<auction_id>)` should conclude and remove this
 auction. No one can bid on this auction after this point. It should return
 
 ```
 { "bid_winner_id": <bidder_id of the winner>,
-                  "current_price": <price of the highest bid> }
+"current_price": <price of the highest bid> }
 ```
 
 
